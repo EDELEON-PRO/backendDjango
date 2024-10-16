@@ -2,12 +2,16 @@
 
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
-from .models import Producto,TipoProducto
-from .serializers import ProductoSerializer,TipoProductoSerializer
+from .models import Producto,TipoProducto,Categoria
+from .serializers import ProductoSerializer,TipoProductoSerializer,CategoriaSerializer
 
 class TipoProductoViewSet(viewsets.ModelViewSet):
     queryset = TipoProducto.objects.all()
     serializer_class = TipoProductoSerializer
+
+class CategoriaViewSet(viewsets.ModelViewSet):
+    queryset = Categoria.objects.all()
+    serializer_class = CategoriaSerializer
 
 class ProductoViewSet(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
